@@ -4,7 +4,7 @@ import DataList from './quote.table';
 
 let resource = "/quotes";
 
-class QuotesTable extends Component {
+class QuotesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,4 +45,4 @@ class QuotesTable extends Component {
   }
 }
 
-export default QuotesTable;
+export default QuotesContainer;

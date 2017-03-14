@@ -3,10 +3,10 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {Panel} from 'react-bootstrap';
 
 //function nameFormatter(cell, row) {
-//  return `<a href="/cmdb/company/${row.company_id}">${row.company_name}</a>`;
+//  return `<a href="/quotes/${row.id}">${row.quote}</a>`;
 //}
 
-const AsanasBootstrapTable = ({dats}) => {
+const QuotesTable = ({dats}) => {
   return (
     <Panel header="Quotes" bsStyle="primary">
       <BootstrapTable data={dats} striped={true} hover={true}>
@@ -25,8 +25,8 @@ const AsanasBootstrapTable = ({dats}) => {
  * propTypes
  * @property {string} dats data
  */
-AsanasBootstrapTable.propTypes = {
+QuotesTable.propTypes = {
   dats: React.PropTypes.array.isRequired,
 };
 
-export default AsanasBootstrapTable;
+export default QuotesTable;

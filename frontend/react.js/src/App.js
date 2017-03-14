@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Asanas from './components/quotes/quote.container';
+import Quotes from './components/quotes/quote.container';
 import './App.css';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
           <h2>Quotes</h2>
         </div>
         <div className="table">
-          <Asanas />
+          <Quotes />
         </div>
       </div>
     );
