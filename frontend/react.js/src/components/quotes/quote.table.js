@@ -1,21 +1,20 @@
 import React from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {Panel} from 'react-bootstrap';
-
-//function nameFormatter(cell, row) {
-//  return `<a href="/quotes/${row.id}">${row.quote}</a>`;
-//}
+import './table.css';
 
 const QuotesTable = ({dats}) => {
   return (
     <Panel header="Quotes" bsStyle="primary">
-      <BootstrapTable data={dats} striped={true} hover={true}>
-        <TableHeaderColumn dataField='authorFirstName'>First Name</TableHeaderColumn>
-        <TableHeaderColumn dataField='authorLastName'>Last Name</TableHeaderColumn>
-        <TableHeaderColumn dataField='quote'>Quote</TableHeaderColumn>
-        <TableHeaderColumn dataField='createdAt'>Created At</TableHeaderColumn>
-        <TableHeaderColumn dataField='updatedAt'>Updated At</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' isKey>Id</TableHeaderColumn>
+      <BootstrapTable insertRow exportCSV data={ dats }
+        tableStyle={{ border: '#0000FF 2.5px solid' }}
+        containerStyle={{ border: '#FFBB73 2.5px solid' }}
+        headerStyle={{ border: 'red 1px solid' }}
+        bodyStyle={{ border: 'green 1px solid' }}>
+          <TableHeaderColumn dataField='id' isKey={ true }>ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='authorFirstName'>Author First Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='authorLastName' dataSort={true}>Author Last Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='quote'>Quote</TableHeaderColumn>
       </BootstrapTable>
     </Panel>
   );
