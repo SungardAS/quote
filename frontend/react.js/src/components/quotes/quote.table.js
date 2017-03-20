@@ -1,19 +1,26 @@
-import React from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import {Panel} from 'react-bootstrap';
+import React from "react";
+import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
+import { Panel } from "react-bootstrap";
 
-const QuotesTable = ({dats}) => {
+const QuotesTable = ({ dats }) => {
   return (
     <Panel header="Quotes" bsStyle="primary">
-      <BootstrapTable exportCSV data={ dats }
-        tableStyle={{ border: '#0000FF 2.5px solid' }}
-        containerStyle={{ border: '#FFBB73 2.5px solid' }}
-        headerStyle={{ border: 'red 1px solid' }}
-        bodyStyle={{ border: 'green 1px solid' }}>
-          <TableHeaderColumn dataField='id' isKey={ true }>ID</TableHeaderColumn>
-          <TableHeaderColumn dataField='authorFirstName'>Author First Name</TableHeaderColumn>
-          <TableHeaderColumn dataField='authorLastName' dataSort={true}>Author Last Name</TableHeaderColumn>
-          <TableHeaderColumn dataField='quote'>Quote</TableHeaderColumn>
+      <BootstrapTable
+        exportCSV
+        data={dats}
+        tableStyle={{ border: "#0000FF 2.5px solid" }}
+        containerStyle={{ border: "#FFBB73 2.5px solid" }}
+        headerStyle={{ border: "red 1px solid" }}
+        bodyStyle={{ border: "green 1px solid" }}
+      >
+        <TableHeaderColumn dataField="id" isKey={true}>ID</TableHeaderColumn>
+        <TableHeaderColumn dataField="authorFirstName">
+          Author First Name
+        </TableHeaderColumn>
+        <TableHeaderColumn dataField="authorLastName" dataSort={true}>
+          Author Last Name
+        </TableHeaderColumn>
+        <TableHeaderColumn dataField="quote">Quote</TableHeaderColumn>
       </BootstrapTable>
     </Panel>
   );
@@ -24,7 +31,7 @@ const QuotesTable = ({dats}) => {
  * @property {string} dats data
  */
 QuotesTable.propTypes = {
-  dats: React.PropTypes.array.isRequired,
+  dats: React.PropTypes.array.isRequired
 };
 
 export default QuotesTable;

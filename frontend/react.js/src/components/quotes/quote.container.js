@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Api from "../../utils/api";
-import DataList from './quote.table';
+import DataList from "./quote.table";
 
 let resource = "/quotes";
 
@@ -39,9 +39,7 @@ class QuotesContainer extends Component {
   }
 
   render() {
-    return (
-      <DataList dats={this.state.dat} />
-    );
+    return <DataList dats={this.state.dat} />;
   }
 }
 

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Quotes from './components/quotes/quote.container';
-import './App.css';
+import React, { Component } from "react";
+import Quotes from "./components/quotes/quote.container";
+import "./App.css";
 
 class App extends Component {
   render() {
