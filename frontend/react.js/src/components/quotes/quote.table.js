@@ -1,12 +1,11 @@
 import React from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {Panel} from 'react-bootstrap';
-import './table.css';
 
 const QuotesTable = ({dats}) => {
   return (
     <Panel header="Quotes" bsStyle="primary">
-      <BootstrapTable insertRow exportCSV data={ dats }
+      <BootstrapTable exportCSV data={ dats }
         tableStyle={{ border: '#0000FF 2.5px solid' }}
         containerStyle={{ border: '#FFBB73 2.5px solid' }}
         headerStyle={{ border: 'red 1px solid' }}
