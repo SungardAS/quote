@@ -8,8 +8,8 @@ module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
   if (typeof data.quote !== 'string') {
-    console.error('Validation failed: English name is required.');
-    callback(new Error('Couldn\'t create the asana item.'));
+    console.error('Validation failed: Quote is required.');
+    callback(new Error('Couldn\'t create the quote.'));
     return;
   }
 

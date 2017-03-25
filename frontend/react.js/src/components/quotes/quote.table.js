@@ -5,6 +5,7 @@ import { Panel } from "react-bootstrap";
 const QuotesTable = ({ dats }) => {
   return (
     <Panel header="Quotes" bsStyle="primary">
+      <h4>Quotes</h4>
       <BootstrapTable
         exportCSV
         data={dats}
