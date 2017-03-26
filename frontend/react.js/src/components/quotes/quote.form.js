@@ -6,13 +6,13 @@ import Form from "react-semantic-form";
 const attributes = [
   {
     type: "Text",
-    name: "authorFirstName",
+    name: "firstName",
     required: true,
     label: "Author First Name"
   },
   {
     type: "Text",
-    name: "authorLastName",
+    name: "lastName",
     required: true,
     label: "Author Last Name:"
   },

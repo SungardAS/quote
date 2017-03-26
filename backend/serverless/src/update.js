@@ -20,14 +20,13 @@ module.exports.update = (event, context, callback) => {
       id: event.pathParameters.id
     },
     ExpressionAttributeNames: {
-      "#quote_text": "text"
+      "#quote_text": "quote"
     },
     ExpressionAttributeValues: {
       ":text": data.quote,
-      ":checked": data.checked,
       ":updatedAt": timestamp
     },
-    UpdateExpression: "SET #quote_text = :text, checked = :checked, updatedAt = :updatedAt",
+    UpdateExpression: "SET #quote_text = :text, updatedAt = :updatedAt",
     ReturnValues: "ALL_NEW"
   };
 

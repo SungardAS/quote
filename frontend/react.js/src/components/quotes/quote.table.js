@@ -15,10 +15,10 @@ const QuotesTable = ({ dats }) => {
         bodyStyle={{ border: "green 1px solid" }}
       >
         <TableHeaderColumn dataField="id" isKey={true}>ID</TableHeaderColumn>
-        <TableHeaderColumn dataField="authorFirstName">
+        <TableHeaderColumn dataField="firstName">
           Author First Name
         </TableHeaderColumn>
-        <TableHeaderColumn dataField="authorLastName" dataSort={true}>
+        <TableHeaderColumn dataField="lastName" dataSort={true}>
           Author Last Name
         </TableHeaderColumn>
         <TableHeaderColumn dataField="quote">Quote</TableHeaderColumn>

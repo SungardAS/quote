@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-const uuid = require('uuid');
-const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
+const uuid = require("uuid");
+const AWS = require("aws-sdk"); // eslint-disable-line import/no-extraneous-dependencies
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
-  if (typeof data.quote !== 'string') {
-    console.error('Validation failed: Quote is required.');
-    callback(new Error('Couldn\'t create the quote.'));
+  if (typeof data.quote !== "string") {
+    console.error("Validation failed: Quote is required.");
+    callback(new Error("Couldn't create the quote."));
     return;
   }
 
@@ -17,26 +17,25 @@ module.exports.create = (event, context, callback) => {
     TableName: process.env.DYNAMODB_TABLE,
     Item: {
       id: uuid.v1(),
+      firstName: data.firstName,
+      lastName: data.lastName,
       quote: data.quote,
-      authorFirstName: data.authorFirstName,
-      authorLastName: data.authorLastName,
       createdAt: timestamp,
-      updatedAt: timestamp,
-    },
+      updatedAt: timestamp
+    }
   };
 
   // write to the database
   dynamoDb.put(params, (error, result) => {
-    // handle potential errors
     if (error) {
       console.error(error);
-      callback(new Error('Couldn\'t create the quote.'));
+      callback(new Error("Couldn't create the quote."));
       return;
     }
     // create a response
     const response = {
       statusCode: 200,
-      body: JSON.stringify(result.Item),
+      body: JSON.stringify(result.Item)
     };
     callback(null, response);
   });

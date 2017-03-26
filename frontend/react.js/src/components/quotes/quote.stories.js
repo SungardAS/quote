@@ -8,16 +8,16 @@ const data = [
   {
     createdAt: 1489405627533,
     id: "c90f83d0-07e2-11e7-90b4-a9f4f9e29b6d",
-    authorFirstName: "Matt",
-    authorLastName: "Paz",
+    firstName: "Matt",
+    lastName: "Paz",
     quote: "I'm grateful for the opportunity.",
     updatedAt: 1489405627533
   },
   {
     createdAt: 1489405627533,
     id: "c90f83d0-07e2-11e7-90b4-a9f4f9e29b6d",
-    authorFirstName: "John",
-    authorLastName: "Hiatt",
+    firstName: "John",
+    lastName: "Hiatt",
     quote: "Perfectly good guitar.",
     updatedAt: 1489405627533
   }
