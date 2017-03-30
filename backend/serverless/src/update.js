@@ -8,7 +8,7 @@ module.exports.update = (event, context, callback) => {
   const data = JSON.parse(event.body);
 
   // validation
-  if (typeof data.quote !== "string" || typeof data.checked !== "boolean") {
+  if (typeof data.quote !== "string") {
     console.error("Validation Failed");
     callback(new Error("Couldn't update the quote."));
     return;
@@ -20,13 +20,17 @@ module.exports.update = (event, context, callback) => {
       id: event.pathParameters.id
     },
     ExpressionAttributeNames: {
-      "#quote_text": "quote"
+      "#quote_text": "quote",
+      "#firstName": "firstName",
+      "#lastName": "lastName"
     },
     ExpressionAttributeValues: {
       ":text": data.quote,
+      ":firstName": data.firstName,
+      ":lastName": data.lastName,
       ":updatedAt": timestamp
     },
-    UpdateExpression: "SET #quote_text = :text, updatedAt = :updatedAt",
+    UpdateExpression: "SET #quote_text = :text, #firstName = :firstName, #lastName = :lastName, updatedAt = :updatedAt",
     ReturnValues: "ALL_NEW"
   };
 

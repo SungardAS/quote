@@ -15,11 +15,19 @@ const QuotesTable = ({ dats }) => {
         bodyStyle={{ border: "green 1px solid" }}
       >
         <TableHeaderColumn dataField="id" isKey={true}>ID</TableHeaderColumn>
-        <TableHeaderColumn dataField="firstName">
-          Author First Name
+        <TableHeaderColumn
+          dataField="firstName"
+          dataSort={true}
+          filter={{ type: "TextFilter", delay: 1000 }}
+        >
+          First Name
         </TableHeaderColumn>
-        <TableHeaderColumn dataField="lastName" dataSort={true}>
-          Author Last Name
+        <TableHeaderColumn
+          dataField="lastName"
+          dataSort={true}
+          filter={{ type: "TextFilter", delay: 1000 }}
+        >
+          Last Name
         </TableHeaderColumn>
         <TableHeaderColumn dataField="quote">Quote</TableHeaderColumn>
       </BootstrapTable>
