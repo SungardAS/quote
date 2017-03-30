@@ -1,12 +1,25 @@
-# This is a sample build configuration for Other.
-# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+###
+# Check the guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
 # Only use spaces to indent your .yml configuration.
+#
 # -----
-# You can specify a custom docker image from Docker Hub as your build environment.
-# image: atlassian/default-image:latest
-
+image: node:5
 pipelines:
   default:
-    - step:
+   - step:
         script:
-          - echo "Everything is awesome!"
+          - echo "This script runs on all branches that don't have any specific pipeline assigned in 'branches'."
+  branches:
+    master:
+      - step:
+          script:
+            - echo "Everything is awesome, with master."
+    develop:
+      - step:
+          script:
+            - echo "Everything is awesome, with develop"
+            - cd frontend/react.js
+            - npm install
+            - npm run build
+            - ls -la build
+            - npm run deploy-s3
