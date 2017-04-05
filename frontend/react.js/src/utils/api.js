@@ -4,7 +4,7 @@ const AWS_GATEWAY = true;
 let baseURL = "";
 
 if (AWS_GATEWAY === true) {
-  baseURL = "https://apwag1tf7i.execute-api.us-east-1.amazonaws.com/dev";
+  baseURL = "https://h4nt5sv8v0.execute-api.us-east-1.amazonaws.com/dev";
 } else {
   baseURL = "http://www.example.com";
 }

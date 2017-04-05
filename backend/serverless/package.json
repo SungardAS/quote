@@ -1,7 +1,7 @@
 {
-  "name": "asana",
+  "name": "quote",
   "version": "1.0.0",
-  "description": "CRUD services exposing a REST HTTP interface",
+  "description": "CRUD services exposed through a REST HTTP interface",
   "author": "Matthew Pazaryna",
   "license": "MIT",
   "dependencies": {
