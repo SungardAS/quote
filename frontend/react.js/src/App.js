@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import Asanas from './components/quotes/quote.container';
-import './App.css';
+import React, { Component } from "react";
+import Quotes from "./components/quotes/quote.container";
+
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
           <h2>Quotes</h2>
         </div>
         <div className="table">
-          <Asanas />
+          <Quotes />
         </div>
       </div>
     );

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Api from "../../utils/api";
-import DataList from './quote.table';
+import DataList from "./quote.table";
 
 let resource = "/quotes";
 
-class QuotesTable extends Component {
+class QuotesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,10 +39,8 @@ class QuotesTable extends Component {
   }
 
   render() {
-    return (
-      <DataList dats={this.state.dat} />
-    );
+    return <DataList dats={this.state.dat} />;
   }
 }
 
-export default QuotesTable;
+export default QuotesContainer;
