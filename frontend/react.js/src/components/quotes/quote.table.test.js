@@ -4,7 +4,7 @@ import { shallow, mount, render } from "enzyme";
 import BootstrapTable from "./quote.table";
 
 describe("table", () => {
-  let wrapper;
+  let component;
   const data = [
     {
       createdAt: 1489405627533,
@@ -25,10 +25,20 @@ describe("table", () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<BootstrapTable dats={data} />);
+    component = shallow(<BootstrapTable dats={data} />);
   });
 
-  it("wraps the name prop in an H4", () => {
-    expect(wrapper.find("h4").first().text()).to.equal("Quotes");
+  // 1. test for props for incoming data
+
+  it("should have data property", () => {
+    expect(component.props().data).to.be.exists;
   });
+
+  // 2. additional tests related to ui function, data points etc.
+
+  it("should show 4 columns", () => {
+    const columns = component.find(TableHeaderColumn);
+    expect(columns.length).to.equal(4);
+  });
+
 });
