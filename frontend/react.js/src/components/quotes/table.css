@@ -1,0 +1,17 @@
+.my-header-class {
+  background-color: #0066FF;
+  border: red 1px solid;
+}
+
+.my-body-class {
+  background-color: #CC00FF;
+}
+
+.my-container-class {
+  border: #0000FF 0.5px solid;
+  background-color: papayawhip;
+}
+
+.my-table-container-class {
+  border: #FFBB73 5px solid;
+}
