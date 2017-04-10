@@ -1,10 +1,12 @@
 import axios from "axios";
+import getConfig from './get-config'
+const config = getConfig();
 
 const AWS_GATEWAY = true;
 let baseURL = "";
 
 if (AWS_GATEWAY === true) {
-  baseURL = "https://8wqfcg0au6.execute-api.us-east-1.amazonaws.com/dev";
+  baseURL = config.api.dev;
 } else {
   baseURL = "http://www.example.com";
 }

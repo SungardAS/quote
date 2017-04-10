@@ -6,7 +6,6 @@ const QuotesTable = ({ dats }) => {
   return (
     <Panel header="Quotes" bsStyle="primary">
       <BootstrapTable
-        exportCSV
         data={dats}
         tableStyle={{ border: "#0000FF 2.5px solid" }}
         containerStyle={{ border: "#FFBB73 2.5px solid" }}
